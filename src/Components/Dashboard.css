@@ -1,0 +1,95 @@
+.navbar,
+.navbar-default {
+    background-image: linear-gradient(to bottom,#456481 0,#80b8ec 100%) !important; /* override background image gradient w/ flat color */
+}
+
+.container-fluid {
+    padding-left: 0px           ;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.navbar-wrapper {
+    margin: 35px 40px;
+}
+
+h2{
+    color: black;
+}
+
+.Logout
+{
+   
+}
+
+.Dashboard
+{
+    
+}
+
+
+nav {
+    /* background-color: #0096ff; */
+    background-image: linear-gradient(to bottom,#456481 0,#80b8ec 100%) !important; /* override background image gradient w/ flat color */
+    color: white;
+    width: 60%;
+    height: 100vh;
+    max-width: 200px;
+    font-size: 20px;
+    }
+    
+    
+    .navbar-nav .nav-item {
+    padding: 0 30px;
+    }
+    
+    
+    .navbar-nav .nav-item:hover {
+    background-color: white;
+    border-radius: 8px;
+    }
+    
+    
+    .navbar-nav .nav-item:hover a {
+    color: #0096ff;
+    }
+    
+    
+    .navbar-nav .nav-item a {
+    color: white;
+    }
+
+    .nav-menu-items
+{
+    /* background-color: #1D2127; */
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    list-style: none;
+    transition: 800ms;
+    margin: 160px 30px;
+    width: 100%;
+    padding: 10px 20px;
+ 
+}
+
+.nav-menu
+{
+    /* background-color: #1D2127; */
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    transition: 850ms;
+    left: -100%;
+}
+ 
+.nav-menu-active
+{
+    left: 0;
+    transition: 350ms;
+}
+ 

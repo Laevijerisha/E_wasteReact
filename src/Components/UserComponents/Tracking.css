@@ -1,0 +1,36 @@
+/* Stepper.css */
+
+.stepper {
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    background-color: #f0f0f0;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.step.active {
+    color: #333;
+}

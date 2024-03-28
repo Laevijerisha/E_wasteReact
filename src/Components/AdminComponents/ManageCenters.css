@@ -1,0 +1,54 @@
+.manage-centers-page {
+    padding: 20px;
+}
+
+.centers-table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.header-row {
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+
+.header,
+.data {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.header:first-child,
+.data:first-child {
+    border-left: 1px solid #ddd;
+}
+
+.header:last-child,
+.data:last-child {
+    border-right: 1px solid #ddd;
+}
+
+.add-center-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-center-btn:hover {
+    background-color: #0056b3;
+}
