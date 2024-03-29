@@ -16,23 +16,23 @@ function Home() {
           <div className={isOpen ? "navbar-links active" : "navbar-links"}>
             <div className="navbar-logo">E-Waste Management System</div>
             <a href="#home" onClick={toggleNavbar}>
-              <span class="glyphicon glyphicon-home"></span>Home
+           Home
             </a>
             <a href="#about" onClick={toggleNavbar}>
-              <span class="glyphicon glyphicon-tasks"></span>About
+             About
             </a>
             <a href="#services" onClick={toggleNavbar}>
-              <span class="glyphicon glyphicon-globe"></span>Services
+              Services
             </a>
             <a href="#contact" onClick={toggleNavbar}>
-              <span class="glyphicon glyphicon-phone-alt"></span>Contact
+              Contact
             </a>
             <div className="admin-button">
               <NavLink to='/login'>
-                <button class="btn btn-primary">Login</button>
+                <button className="navbarbtn">Login</button>
               </NavLink>
               <NavLink to='/signup'>
-                <button class="btn btn-primary" style={{ marginLeft: "20px" }}>Signup</button>
+                <button className="navbarbtn" style={{ marginLeft: "20px" }}>Signup</button>
               </NavLink>
             </div>
           </div>
@@ -50,7 +50,7 @@ function Home() {
         </div>
       </nav>
       <div class="container" id="home">
-      <div className="home-container">
+      <div className="home-container" style={{textAlign:"center"}}>
             <h1>Welcome to E-Waste Management System</h1>
             <p>Proper disposal of electronic waste is crucial for environmental sustainability.</p>
             <div className="features">
@@ -60,8 +60,8 @@ function Home() {
                     <button>Find Locations</button>
                 </div>
                 <div className="feature">
-                    <h2>Schedule Pickup</h2>
-                    <p>Schedule a pickup service for your e-waste.</p>
+                    <h2>Recycling Your E_Waste</h2>
+                    <p> You can earn money by just giving your damaged Electronics</p>
                     <button>Schedule Pickup</button>
                 </div>
                 <div className="feature">

@@ -12,6 +12,7 @@ import UserDash from './Components/UserComponents/UserDash';
 
 import AddCenter from './Components/Center/AddCenter';
 import ApproveRequest from './Components/Center/ApproveRequest';
+import UserHome from './Components/UserComponents/UserHome';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
      <Route path ='/approveStatus' element={<ApproveRequest/>}></Route>
         <Route path='/addCenters' element={<AddCenter/>}></Route>
         <Route path='/manageCenters' element={<ManageCenters/>}></Route>
+        <Route path='/home' element={<UserHome/>}></Route>
   
       </Routes>
       </BrowserRouter> 

@@ -2,17 +2,61 @@
     padding-left: 0px           ;
 }
 
+/* Navbar container */
+/* Navbar container */
+/* Navbar container */
+/* Navbar container */
+/* Navbar container */
 .navbar {
+    background-color: #333;
+    color: white;
+    padding: 20px 20px; 
+    font-family: Arial, sans-serif;
     width: 100%;
-}
-
-.nav-wrapper {
-    margin: 35px 40px;
-}
-
-/* Home.css */
-
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+   
+  }
+  
+  /* Navbar links */
+  .navbar-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  /* Navbar logo */
+  .navbar-logo {
+    font-size: 1.5em;
+    margin-right: auto;
+  }
+  
+  /* Navbar buttons */
+  .admin-button {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbarbtn {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+  }
+  
+  
 .home-container {
+ margin-top: 60px;
     text-align: center;
     padding: 50px;
 }
@@ -26,9 +70,9 @@
 .feature {
     flex: 1;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #76ABAE;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #76ABAE;
     margin: 0 10px;
 }
 
@@ -43,8 +87,8 @@
 
 .feature button {
     padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #31363F;
+    color: #EEEEEE;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -52,7 +96,8 @@
 }
 
 .feature button:hover {
-    background-color: #0056b3;
+    background-color: #EEEEEE;
+    color: black;
 }
 
 /* About.css */
@@ -105,6 +150,7 @@
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 .services {
@@ -117,7 +163,7 @@
     flex: 1;
     padding: 30px;
     border-radius: 10px;
-    background-color: #f3f3f3;
+    background-color: #76ABAE;
     margin: 0 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -198,7 +244,7 @@
 
 .contact-form button {
     padding: 12px 24px;
-    background-color: #007bff;
+    background-color: #569194;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -208,6 +254,23 @@
 }
 
 .contact-form button:hover {
-    background-color: #0056b3;
+    background-color: #EEEEEE;
+    color: black;
 }
 
+.navbarbtn{
+    background-color: #569194;
+    
+        
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+    
+}
+.navbarbtn:hover{
+    background-color: #EEEEEE;
+    color: black;
+}
