@@ -24,7 +24,7 @@ function CenterDash() {
                     Menu
                 </button>
                 <div className="user-info">
-                    <span>Welcome, Admin</span>
+                    <span>Welcome, Center</span>
                     <NavLink to='/'>
                         <button className='logout-btn' onClick={() => alert('Logout')}>Logout</button>
                     </NavLink>

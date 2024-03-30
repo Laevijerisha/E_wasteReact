@@ -37,7 +37,7 @@ const DisplayService = () => {
 
     const handleApprove = async (itemId) => {
         try {
-            await axios.post('http://localhost:5027/api/Item/Put', { id: itemId, status: "Approve" });
+            await axios.post('http://localhost:5027/api/Item/updateStatus', { id: itemId, status: "Approve" });
             fetchServices();
         } catch (error) {
             console.error(error);
@@ -46,7 +46,7 @@ const DisplayService = () => {
 
     const handleReject = async (itemId) => {
         try {
-            await axios.post('http://localhost:5027/api/Item/Put', { id: itemId, status: 'Rejected' });
+            await axios.post('http://localhost:5027/api/Item/updateStatus', { id: itemId, status: 'Rejected' });
             fetchServices();
         } catch (error) {
             console.error(error);
@@ -72,10 +72,10 @@ const DisplayService = () => {
                                     <img src={service.imageUrl} alt="Item" className="card-image" />
                                 </div>
                                 <div className="card-footer">
-                                    <p>Item Name: {service.itemName}</p>
-                                    <p>Item Location: {service.itemLocation}</p>
-                                    <p>Item Condition: {service.itemCondition}</p>
-                                    <p>Request Status: {service.requestStatus}</p>
+                                    <p><b>Item Name: </b>{service.itemName}</p>
+                                    <p><b>Item Location: </b>{service.itemLocation}</p>
+                                    <p><b>Item Condition:</b> {service.itemCondition}</p>
+                                    <p><b>Request Status:</b> {service.requestStatus}</p>
                                     
                                     <button className="btn btn-success" onClick={() => handleApprove(service.itemId)}>Approve</button>
                                     <button className="btn btn-danger" onClick={() => handleReject(service.itemId)}>Reject</button>

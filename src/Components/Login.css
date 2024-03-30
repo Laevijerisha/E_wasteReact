@@ -2,10 +2,11 @@
 
 
   .login-form {
-    background-color: #fff;
+    background-color: #76ABAE;
     padding: 40px;
     border-radius: 10px;
     width: 240%;
+    border: 1px solid black;
   }
   
   .login-form h1 {
@@ -52,7 +53,7 @@
   }
   
 .login-background {
-    background-image: url('D:\E_wasteFrontend\E_wasteReact\src\Components\Images\home-electronic-banner.webp');
+    /* background-image: url('D:\E_wasteFrontend\E_wasteReact\src\Components\Images\home-electronic-banner.webp'); */
     background-size: left;
     min-height: 100vh;
     display: flex;

@@ -15,7 +15,7 @@ const ApproveRequest = () => {
 
     const fetchServices = async () => {
         try {
-            const response = await axios.get('http://localhost:5027/api/Item/GetItems');
+            const response = await axios.get('http://localhost:5027/api/Item/GetApprovedItem/approved');
             const servicesWithImages = await Promise.all(response.data.map(async (service) => {
                 try {
                     const imageResponse = await axios.get(`http://localhost:5027/api/Item/GetImage/${service.itemId}/Image`, {
@@ -58,7 +58,7 @@ const ApproveRequest = () => {
         <>
             <div className="container" id="products">
                 <div className="text-center">
-                    <h2>List of our services</h2>
+                    <h2>List of your Approved Request</h2>
                 </div>
             </div>
             <div className="servicelist">
@@ -73,9 +73,9 @@ const ApproveRequest = () => {
                                     <img src={service.imageUrl} alt="Item" className="card-image" />
                                 </div>
                                 <div className="card-footer">
-                                    <p>Item Name: {service.itemName}</p>
-                                    <p>Request Status: {service.requestStatus}</p>
-                                    <p>Approved Item Status: {service.approvedItemStatus}</p>
+                                    <p><b>Item Name:</b> {service.itemName}</p>
+                                    <p><b>Request Status:</b> {service.requestStatus}</p>
+                                    <p><b>Approved Item Status: </b>{service.approvedItemStatus}</p>
                                     <button className="btn btn-success" onClick={() => handleApprove(service.itemId)}>Collected</button>
                                     <button className="btn btn-danger" onClick={() => handleReject(service.itemId)}>Recycle</button>
                                 </div>
