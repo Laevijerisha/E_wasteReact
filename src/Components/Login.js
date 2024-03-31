@@ -31,6 +31,7 @@ function Login() {
         console.log('User Login Sucessfully:', response.data);
 
         Cookies.set('email', formValues.email, { expires: 7 });
+     
 
         window.alert('User Login successfuly');
 

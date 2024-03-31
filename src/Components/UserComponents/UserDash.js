@@ -2,10 +2,9 @@ import React from 'react';
 import './UserDash.css';
 import { useState } from 'react';
 import { useLocation, NavLink, useNavigate } from 'react-router-dom';
-import Tracking from './Tracking.js';
+
 import SubmitRequest from './SubmitRequest.js'; // Import the SubmitRequest component
-import UserHistory from './UserHistory';
-import ViewRequests from '../AdminComponents/ViewRequests';
+
 import UserHome from './UserHome.js';
 
 function UserDash() {
@@ -47,14 +46,14 @@ function UserDash() {
                 <li className={activePage === 'home' ? 'active' : ''} onClick={() => handlePageChange('home')}>Home</li>
 
                     <li className={activePage === 'submit' ? 'active' : ''} onClick={() => handlePageChange('submit')}>Submit Request</li>
-                    <li className={activePage === 'tracking' ? 'active' : ''} onClick={() => handlePageChange('tracking')}>Tracking</li>
+                   
                 </ul>
             </div>
             <div className="main-content">
                 {/* Render different components based on the activePage state */}
                 {activePage === 'home' && <UserHome/>}
                 {activePage === 'submit' && <SubmitRequest />}
-                {activePage === 'tracking' && <Tracking />}
+              
             </div>
         </div>
     );

@@ -8,7 +8,7 @@ import { Link, useNavigate, NavLink } from "react-router-dom";
 
 function AddCenter() {  
 
-    const initalvalues = { center_Name: "", email: "", phone_number: "", centerLocation: "", password: "", personal_Email: "" };  
+    const initalvalues = { center_Name: "", email: "", phone_number: "", centerLocation: "", password: ""};  
 
     const [formValues, setformValues] = useState(initalvalues);  
 
@@ -186,13 +186,7 @@ function AddCenter() {
 
                         </div><p style={{color:"red"}} >{formErrors.password}</p>  
 
-                        <div className="form-floating">  
-
-                            <input type="email" className="form-control" id="email" name="personal_Email" value={formValues.personal_Email} placeholder="Personal Email" onChange={handleChange} />  
-
-                             
-
-                        </div><p style={{color:"red"}}>{formErrors.personal_Email}</p>  
+                       
 
                         <button className="btn btn-primary">Submit</button>  
 
