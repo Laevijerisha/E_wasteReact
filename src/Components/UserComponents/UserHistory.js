@@ -2,53 +2,44 @@ import React from 'react'
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import './UserHistory.css'
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
+
 function UserHistory() {
     const navigate = useNavigate();
     const [services, setServices] = useState([]);
     const [filteredServices, setFilteredServices] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
 
-    // useEffect(() => {
-    //     fetchServices();
-    // }, []);
+    useEffect(() => {
+        const fetchServices = async () => {
+            try {
+                const response = await axios.post('http://localhost:5027/api/Item/FindUserHistory', {
+                    userId: Cookies.get("userid")
+                });
 
-    // const fetchServices = async () => {
-    //     try {
-    //         const response = await axios.post('http://localhost:5027/api/Item/FindUserHistory');
-    //             
-    //         const servicesWithImages = await Promise.all(response.data.map(async (service) => {
-    //             try {
-    //                 const imageResponse = await axios.get(`http://localhost:5027/api/Item/GetImage/${service.itemId}/Image`, {
-    //                     responseType: 'arraybuffer',
-    //                 });
-    //                 const imageUrl = URL.createObjectURL(new Blob([imageResponse.data], { type: 'image/jpeg' }));
-    //                 return { ...service, imageUrl };
-    //             } catch (error) {
-    //                 console.error('Error fetching image for service:', service.itemId, error);
-    //                 return service;
-    //             }
-    //         }));
-    //         setServices(servicesWithImages);
-    //         setFilteredServices(servicesWithImages);
-            
-    //     } catch (error) {
-    //         console.error('Error fetching services:', error);
-    //     }
-    // };
+                const servicesWithImages = await Promise.all(response.data.map(async (service) => {
+                    try {
+                        const imageResponse = await axios.get(`http://localhost:5027/api/Item/GetImage/${service.itemId}/Image`, {
+                            responseType: 'arraybuffer',
+                        });
+                        const imageUrl = URL.createObjectURL(new Blob([imageResponse.data], { type: 'image/jpeg' }));
+                        return { ...service, imageUrl };
+                    } catch (error) {
+                        console.error('Error fetching image for service:', service.itemId, error);
+                        return service;
+                    }
+                }));
+                setServices(servicesWithImages);
+                setFilteredServices(servicesWithImages);
 
-    const [data, setData] = useState([])
-    useEffect(()=>{
-      axios.post('http://localhost:5027/api/Item/FindUserHistory',{
-        userId:Cookies.get("userid")
-    })
-    .then(res => {
-      setData(res.data);
-      console.log(res.data);  
-})
-     .catch(err => console.log(err));
-    },[])
+            } catch (error) {
+                console.error('Error fetching services:', error);
+            }
+        };
+
+        fetchServices();
+    }, []);
 
     const handleDelete = async (itemId) => {
         const confirmDelete = window.confirm("Do you want to delete this center?");
@@ -60,6 +51,7 @@ function UserHistory() {
                 });
         }
     };
+
     return (
         <>
             <div className="container" id="products">
@@ -70,14 +62,14 @@ function UserHistory() {
             <div className="servicelist">
                 <div className="">
                     <div className="products-container panel panel-default text-center">
-                        {data.map((service) => (
+                        {services.map((service) => (
                             <div key={service.itemId} className="product-item card">
                                 <div className="card-header">
                                     <h2>Request ID: {service.itemId}</h2>
                                 </div>
-                                {/* <div className="card-body">
-                                    <img src={data.imageUrl} alt="Item" className="card-image" />
-                                </div> */}
+                                <div className="card-body">
+                                    <img src={service.imageUrl} alt="Item" className="card-image" />
+                                </div>
                                 <div className="card-footer">
                                     <p><b>Item Name: </b>{service.itemName}</p>
                                     <p><b>Item Location: </b>{service.itemLocation}</p>

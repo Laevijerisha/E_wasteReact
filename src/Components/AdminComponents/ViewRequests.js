@@ -73,6 +73,7 @@ const DisplayService = () => {
                                 </div>
                                 <div className="card-footer">
                                     <p><b>Item Name: </b>{service.itemName}</p>
+                                  
                                     <p><b>Item Location: </b>{service.itemLocation}</p>
                                     <p><b>Item Condition:</b> {service.itemCondition}</p>
                                     <p><b>Request Status:</b> {service.requestStatus}</p>
