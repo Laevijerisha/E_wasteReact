@@ -31,8 +31,7 @@ function Login() {
         console.log('User Login Sucessfully:', response.data);
 
         Cookies.set('email', formValues.email, { expires: 7 });
-     
-
+    
         window.alert('User Login successfuly');
 
         navigate('/userdash');
@@ -77,7 +76,6 @@ function Login() {
         } else {
           window.alert('Please sign up');
         }
-
         if (!values.password) {
           errors.password = 'Password is required!';
         } else if (values.password.length < 4) {
